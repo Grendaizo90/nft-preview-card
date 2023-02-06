@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3 {
+	overflow-wrap: break-word;
+}
+
+/* global styles */
+
+:root {
+	--primary-blue: hsl(215, 51%, 70%);
+	--primary-cyan: hsl(178, 100%, 50%);
+	--main-bg-color: hsl(217, 54%, 11%);
+	--card-bg-color: hsl(216, 50%, 16%);
+	--line-color: hsl(215, 32%, 27%);
+	--white: hsl(0, 0%, 100%);
+}
+
+body {
+	background-color: var(--main-bg-color);
+	color: var(--primary-blue);
+	font-family: Outfit, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	display: grid;
+	place-content: center;
+	min-width: 375px;
+}
+
+.flex-group {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.divider {
+	border: 0.5px solid var(--line-color);
+}
+
+/* main styles */
+
+.card {
+	display: grid;
+	gap: 1rem;
+	padding: 24px;
+	max-width: 350px;
+	border-radius: 18px;
+	background-color: var(--card-bg-color);
+}
+
+.card__img {
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+.card__img-layer {
+	visibility: hidden;
+	background-color: var(--primary-cyan);
+	background-image: url('images/icon-view.svg');
+	/* opacity: 0.6; */
+	z-index: -1;
+}
+
+.card__img-layer:hover {
+	visibility: visible;
+}
+
+.card__title {
+	font-size: 22px;
+	color: var(--white);
+	font-weight: 600;
+	width: max-content;
+}
+
+.card__title:hover {
+	cursor: pointer;
+	color: var(--primary-cyan);
+}
+
+.card__description {
+	font-weight: 300;
+}
+
+.info {
+	font-size: 16px;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+}
+
+.info[data-icon='nft-gem'] {
+	color: var(--primary-cyan);
+	font-weight: 600;
+}
+
+.info[data-icon='nft-gem']::before {
+	content: '';
+	background-image: url('images/icon-ethereum.svg');
+	width: 11px;
+	height: 18px;
+}
+
+.info[data-icon='clock']::before {
+	content: '';
+	background-image: url('images/icon-clock.svg');
+	width: 17px;
+	height: 17px;
+}
+
+.card__credits {
+	font-size: 16px;
+	margin-bottom: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: start;
+	gap: 1rem;
+}
+
+.avatar {
+	height: 33px;
+	width: 33px;
+	border: 1px solid var(--white);
+	border-radius: 100%;
+}
+
+.card__credits .shifted {
+	color: var(--white);
+}
+
+.card__credits .shifted:hover {
+	cursor: pointer;
+	color: var(--primary-cyan);
+}
+
+/* attribution */
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
