@@ -66,6 +66,7 @@ body {
 	display: grid;
 	place-content: center;
 	min-width: 375px;
+	min-height: 100vh;
 }
 
 .flex-group {
